@@ -1,0 +1,3773 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>pentru ioana ♡</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fredoka:wght@400;500;600;700&family=Gochi+Hand&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+
+:root{
+    --pink:#f5b5c5;
+    --lightpink:#ffdce5;
+    --cream:#fff0dc;
+    --paper:#ffe8d3;
+    --red:#a12845;
+    --dark:#421923;
+    --hot:#d83e63;
+    --rose:#e97d97;
+    --yellow:#f5d47e;
+    --purple:#c8a8df;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:Fredoka,sans-serif;
+    color:var(--dark);
+    overflow:hidden;
+}
+
+button,input{
+    font:inherit;
+}
+
+button{
+    user-select:none;
+}
+
+/* =========================================================
+   GENERAL SCRAPBOOK PAPER
+========================================================= */
+
+.scrap-paper{
+    background:
+        radial-gradient(circle at 10% 15%,#fff8 0 2px,transparent 3px),
+        radial-gradient(circle at 80% 70%,#a1284518 0 2px,transparent 3px),
+        linear-gradient(120deg,#ffd9e2,#ffe9d4 48%,#ffd6e0);
+}
+
+.scrap-paper::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:.35;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 5px,
+            #7d30401b 6px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 8px,
+            #fff5 9px
+        );
+}
+
+.scrap-paper::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:.3;
+    background-image:
+        radial-gradient(#7e304022 1px,transparent 1px);
+    background-size:17px 17px;
+}
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+#lock{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        radial-gradient(circle at 20% 20%,#fff8 0 2px,transparent 3px),
+        linear-gradient(135deg,#f7b9c9,#ffe2d4);
+}
+
+.lock-doodle{
+    position:absolute;
+    font-family:"Gochi Hand";
+    color:#a12845;
+    font-size:25px;
+}
+
+.ld1{
+    top:15%;
+    left:12%;
+    transform:rotate(-12deg);
+}
+
+.ld2{
+    right:12%;
+    bottom:18%;
+    transform:rotate(9deg);
+}
+
+.lock-card{
+    width:min(430px,90vw);
+    padding:35px 30px;
+    text-align:center;
+    background:#fff0dc;
+    border:4px solid #43202a;
+    box-shadow:9px 11px #a1284566;
+    transform:rotate(-1deg);
+    position:relative;
+    z-index:2;
+}
+
+.lock-card::before{
+    content:"";
+    position:absolute;
+    inset:10px;
+    border:2px dashed #d88498;
+    pointer-events:none;
+}
+
+.lock-card h1{
+    font-family:"Gochi Hand";
+    font-size:58px;
+    color:var(--red);
+    margin:0;
+}
+
+.hint{
+    font-family:"Gochi Hand";
+    font-size:21px;
+    margin:5px 0 20px;
+}
+
+.code{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:20px;
+}
+
+.digit{
+    width:55px;
+    height:55px;
+    background:white;
+    border:3px solid #3b1b25;
+    border-radius:10px;
+    display:grid;
+    place-items:center;
+    font-size:28px;
+    box-shadow:3px 4px #3b1b25;
+}
+
+.keypad{
+    width:255px;
+    margin:auto;
+    padding:13px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:9px;
+    background:#ffffffaa;
+    border:3px solid #43202a;
+    border-radius:22px;
+}
+
+.key{
+    height:53px;
+    border:3px solid #722039;
+    border-radius:12px;
+    background:#df4d70;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    box-shadow:0 4px #8a2943;
+}
+
+.key:active{
+    transform:translateY(3px);
+    box-shadow:0 1px #8a2943;
+}
+
+.key.heart{
+    background:white;
+    color:#d33e60;
+    font-size:23px;
+}
+
+.wrong{
+    height:22px;
+    margin-top:8px;
+    font-family:"Gochi Hand";
+    color:#a12845;
+}
+
+.lock-note{
+    font-family:"Gochi Hand";
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* =========================================================
+   MAIN MENU
+========================================================= */
+
+#menu{
+    display:none;
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 15% 25%,#ffffff70 0 2px,transparent 3px),
+        radial-gradient(circle at 78% 70%,#a1284515 0 2px,transparent 3px),
+        linear-gradient(120deg,#ffd9e3,#ffe9d4 48%,#ffd3df);
+}
+
+#menu::after{
+    content:"IOANA";
+    position:absolute;
+    left:50%;
+    top:53%;
+    transform:translate(-50%,-50%) rotate(-7deg);
+    font-family:"Gochi Hand";
+    font-size:clamp(170px,25vw,340px);
+    color:#a1284510;
+    pointer-events:none;
+}
+
+.menu-title{
+    position:absolute;
+    top:5%;
+    left:50%;
+    transform:translateX(-50%) rotate(-2deg);
+    text-align:center;
+    z-index:20;
+    white-space:nowrap;
+}
+
+.menu-title .tiny{
+    font-family:"DM Mono";
+    font-size:10px;
+    letter-spacing:4px;
+}
+
+.menu-title h1{
+    font-family:"Gochi Hand";
+    font-size:clamp(55px,7vw,82px);
+    line-height:.9;
+    color:var(--red);
+    margin:4px 0;
+    text-shadow:3px 3px white,5px 6px #a1284520;
+}
+
+.menu-title p{
+    font-family:"Gochi Hand";
+    font-size:20px;
+    margin:10px 0;
+}
+
+.menu-title .scribble-line{
+    width:230px;
+    height:12px;
+    margin:auto;
+    border-bottom:3px solid #a12845;
+    border-radius:50%;
+    transform:rotate(-2deg);
+}
+
+.doodle{
+    position:absolute;
+    z-index:8;
+    font-family:"Gochi Hand";
+    color:#9d2c48;
+    pointer-events:none;
+}
+
+.doodle-heart{
+    font-size:45px;
+}
+
+.dh1{
+    left:47%;
+    top:26%;
+    transform:rotate(-15deg);
+}
+
+.dh2{
+    right:45%;
+    bottom:22%;
+    transform:rotate(12deg);
+}
+
+.menu-note{
+    position:absolute;
+    z-index:9;
+    font-family:"Gochi Hand";
+    color:#813049;
+    font-size:18px;
+}
+
+.mn1{
+    left:7%;
+    top:25%;
+    transform:rotate(-10deg);
+}
+
+.mn2{
+    right:7%;
+    top:24%;
+    transform:rotate(8deg);
+}
+
+.mn3{
+    left:44%;
+    bottom:6%;
+    transform:rotate(-4deg);
+}
+
+.tape{
+    position:absolute;
+    z-index:15;
+    width:105px;
+    height:27px;
+    background:#e99bacaa;
+    pointer-events:none;
+}
+
+.tape1{
+    left:8%;
+    top:34%;
+    transform:rotate(-8deg);
+}
+
+.tape2{
+    right:8%;
+    top:33%;
+    background:#f1c76aaa;
+    transform:rotate(7deg);
+}
+
+.tape3{
+    left:23%;
+    bottom:8%;
+    background:#c9a8d9aa;
+    transform:rotate(4deg);
+}
+
+/* =========================================================
+   STICKERS
+========================================================= */
+
+.sticker{
+    position:absolute;
+    z-index:17;
+    padding:9px 14px;
+    font-family:"Gochi Hand";
+    color:white;
+    box-shadow:4px 5px #6f294044;
+}
+
+.sticker1{
+    left:36%;
+    top:22%;
+    background:#df5878;
+    border-radius:50%;
+    transform:rotate(-10deg);
+}
+
+.sticker2{
+    right:35%;
+    bottom:21%;
+    background:#e5a83d;
+    border-radius:50%;
+    transform:rotate(7deg);
+}
+
+.cute-sticker{
+    position:absolute;
+    z-index:60;
+    pointer-events:none;
+    font-family:"Gochi Hand";
+    text-align:center;
+    padding:8px 13px;
+    color:#7c2942;
+    background:#fff4df;
+    border:3px solid #54232e;
+    box-shadow:4px 5px #762b4030;
+    line-height:1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.love-sticker{
+    position:absolute;
+    z-index:60;
+    font-size:30px;
+    color:#d13c5e;
+    background:#ffdce5;
+    border:2px solid #a12845;
+    border-radius:50%;
+    min-width:62px;
+    min-height:62px;
+    display:grid;
+    place-items:center;
+    box-shadow:4px 5px #8e304030;
+    pointer-events:none;
+}
+
+.love1{
+    left:27%;
+    top:9%;
+    transform:rotate(-12deg);
+}
+
+.love2{
+    right:28%;
+    top:8%;
+    transform:rotate(10deg);
+}
+
+.love3{
+    left:34%;
+    bottom:4%;
+    transform:rotate(8deg);
+}
+
+.love4{
+    right:34%;
+    bottom:5%;
+    transform:rotate(-9deg);
+}
+
+.bow-sticker{
+    position:absolute;
+    z-index:60;
+    font-size:34px;
+    background:#f7aebe;
+    border:3px solid #6d2839;
+    padding:5px 12px;
+    border-radius:14px;
+    box-shadow:4px 5px #72253a35;
+    pointer-events:none;
+}
+
+.bow1{
+    left:5%;
+    top:48%;
+    transform:rotate(-14deg);
+}
+
+.bow2{
+    right:6%;
+    top:47%;
+    transform:rotate(13deg);
+}
+
+.mini-sticker{
+    position:absolute;
+    z-index:60;
+    font-family:"Gochi Hand";
+    font-size:19px;
+    color:#8b2943;
+    background:#fff1d9;
+    padding:7px 11px;
+    border:2px solid #7b3041;
+    box-shadow:3px 4px #6d263830;
+    pointer-events:none;
+}
+
+.ms1{
+    left:42%;
+    top:31%;
+    transform:rotate(-8deg);
+}
+
+.ms2{
+    right:37%;
+    top:29%;
+    transform:rotate(7deg);
+}
+
+.ms3{
+    left:7%;
+    bottom:35%;
+    transform:rotate(5deg);
+}
+
+.ms4{
+    right:7%;
+    bottom:34%;
+    transform:rotate(-6deg);
+}
+
+.ms5{
+    left:46%;
+    bottom:13%;
+    transform:rotate(5deg);
+}
+
+/* =========================================================
+   GIFT CARDS
+========================================================= */
+
+.gift{
+    position:absolute;
+    z-index:18;
+    cursor:pointer;
+    transition:.35s cubic-bezier(.2,.8,.2,1);
+    filter:drop-shadow(7px 10px #72253a30);
+}
+
+.gift:hover{
+    transform:translateY(-13px) rotate(0deg) scale(1.05)!important;
+    filter:drop-shadow(11px 16px #72253a45);
+}
+
+.card{
+    width:270px;
+    min-height:190px;
+    position:relative;
+    padding:30px 27px;
+    background:#fff0d7;
+    border:3px solid #3d1b24;
+    box-shadow:9px 11px #d26079,inset 0 0 0 7px #fff8e9;
+    overflow:visible;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:11px;
+    border:2px dashed #d27c91;
+    pointer-events:none;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    right:-2px;
+    top:-2px;
+    width:37px;
+    height:37px;
+    background:#f4c3ca;
+    border-left:3px solid #3d1b24;
+    border-bottom:3px solid #3d1b24;
+}
+
+.card-label{
+    position:absolute;
+    top:-18px;
+    left:20px;
+    z-index:5;
+    padding:5px 11px;
+    background:#f4c66e;
+    border:2px solid #593027;
+    font-family:"Gochi Hand";
+    font-size:15px;
+    transform:rotate(-5deg);
+}
+
+.card h2{
+    position:relative;
+    z-index:3;
+    margin:0 65px 10px 0;
+    font-family:"Gochi Hand";
+    font-size:38px;
+    line-height:.95;
+    color:var(--red);
+}
+
+.card p{
+    position:relative;
+    z-index:3;
+    max-width:170px;
+    margin:0;
+    font-family:"Gochi Hand";
+    font-size:18px;
+    line-height:1.18;
+}
+
+.card-icon{
+    position:absolute;
+    right:15px;
+    bottom:13px;
+    font-size:54px;
+    z-index:3;
+    transform:rotate(8deg);
+}
+
+.card-doodle{
+    position:absolute;
+    font-family:"Gochi Hand";
+    color:#812c45;
+    z-index:7;
+    white-space:nowrap;
+    pointer-events:none;
+}
+
+.card-doodle span{
+    display:block;
+    font-size:27px;
+}
+
+.g1{
+    left:9%;
+    top:36%;
+    transform:rotate(-6deg);
+}
+
+.g2{
+    right:9%;
+    top:34%;
+    transform:rotate(5deg);
+}
+
+.g3{
+    left:24%;
+    bottom:8%;
+    transform:rotate(4deg);
+}
+
+.g4{
+    right:20%;
+    bottom:9%;
+    transform:rotate(-5deg);
+}
+
+.g1 .card-doodle{
+    top:-52px;
+    left:4px;
+    transform:rotate(-6deg);
+}
+
+.g1 .card-doodle span{
+    margin-left:90px;
+    transform:rotate(12deg);
+}
+
+.g2 .card-doodle{
+    top:-51px;
+    right:0;
+    transform:rotate(6deg);
+}
+
+.g2 .card-doodle span{
+    margin-left:25px;
+    transform:rotate(15deg);
+}
+
+.g3 .card-doodle{
+    bottom:-50px;
+    left:10px;
+    transform:rotate(-5deg);
+}
+
+.g3 .card-doodle span{
+    margin-left:80px;
+    transform:rotate(-12deg);
+}
+
+.g4 .card-doodle{
+    bottom:-52px;
+    right:5px;
+    transform:rotate(5deg);
+}
+
+.g4 .card-doodle span{
+    margin-left:45px;
+    transform:rotate(18deg);
+}
+
+/* =========================================================
+   GIFT VIEW
+========================================================= */
+
+#giftView{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:50;
+    background:#ffe5d2;
+}
+
+.view{
+    position:absolute;
+    inset:0;
+    overflow:auto;
+    padding:60px 7vw 80px;
+}
+
+.back{
+    position:fixed;
+    left:23px;
+    top:22px;
+    z-index:100;
+    border:3px solid #39202a;
+    background:#fff0dc;
+    padding:9px 15px;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:4px 5px #a12845;
+    font-weight:bold;
+}
+
+.view h1{
+    font-family:"Gochi Hand";
+    color:var(--red);
+    font-size:65px;
+    margin:15px 0;
+}
+
+.view-sub{
+    font-family:"Gochi Hand";
+    font-size:22px;
+}
+
+/* =========================================================
+   PAGE STICKERS
+========================================================= */
+
+.page-sticker{
+    position:absolute;
+    z-index:40;
+    pointer-events:none;
+    font-family:"Gochi Hand";
+    padding:8px 13px;
+    border:3px solid #54232e;
+    box-shadow:4px 5px #6d263830;
+    background:#fff0dc;
+    color:#8c2944;
+    font-size:21px;
+}
+
+
+
+
+
+
+
+
+
+.page-love1{
+    left:18%;
+    top:10%;
+    font-size:31px;
+    background:#ffd7e1;
+    border-radius:50%;
+    transform:rotate(-9deg);
+}
+
+.page-love2{
+    right:17%;
+    top:10%;
+    font-size:31px;
+    background:#ffd7e1;
+    border-radius:50%;
+    transform:rotate(10deg);
+}
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+#letter{
+    background:
+        radial-gradient(circle at 10% 15%,#fff8 0 2px,transparent 3px),
+        radial-gradient(circle at 82% 72%,#a1284514 0 2px,transparent 3px),
+        linear-gradient(120deg,#ffe3cf,#ffd3df);
+}
+
+.letter-scribble{
+    position:absolute;
+    top:100px;
+    right:10%;
+    font-family:"Gochi Hand";
+    color:#a12845;
+    transform:rotate(5deg);
+    z-index:20;
+}
+
+.letter-wrap{
+    width:min(900px,92vw);
+    margin:45px auto 90px;
+    position:relative;
+}
+
+.letter-wrap > h1{
+    position:relative;
+    z-index:20;
+    text-align:center;
+    margin:0 0 18px;
+    font-family:"Gochi Hand";
+    color:var(--red);
+    font-size:clamp(48px,6vw,70px);
+    transform:rotate(-2deg);
+    text-shadow:3px 3px #fff;
+}
+
+.envelope-big{
+    height:540px;
+    position:relative;
+    background:#dca25f;
+    border:5px solid #43202a;
+    border-radius:9px;
+    overflow:hidden;
+    box-shadow:12px 15px #8d3b4d;
+    isolation:isolate;
+}
+
+.envelope-big::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:.15;
+    background:
+        repeating-linear-gradient(0deg,transparent 0 7px,#6d351f 8px),
+        repeating-linear-gradient(90deg,transparent 0 11px,#fff 12px);
+}
+
+.envelope-big::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:43%;
+    z-index:1;
+    pointer-events:none;
+    background:
+        linear-gradient(34deg,transparent 49.4%,#e8b36e 49.6% 50.2%,transparent 50.4%),
+        linear-gradient(-34deg,transparent 49.4%,#e8b36e 49.6% 50.2%,transparent 50.4%);
+    opacity:.9;
+}
+
+.letter-sheet{
+    position:absolute;
+    width:74%;
+    height:79%;
+    left:13%;
+    top:8%;
+    padding:42px 54px 35px 64px;
+    background:
+        repeating-linear-gradient(0deg,transparent 0 29px,#d85d7520 30px),
+        linear-gradient(90deg,transparent 0 43px,#d85d7525 44px,transparent 45px),
+        #fff0d7;
+    border:3px solid #4a2029;
+    box-shadow:7px 9px #8f3b4b,0 0 0 7px #fff0d766;
+    transform:translateY(118px) rotate(-1.2deg);
+    transition:1.4s cubic-bezier(.2,.8,.2,1);
+    z-index:3;
+    overflow:hidden;
+}
+
+.letter-sheet::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        linear-gradient(135deg,#ffffff88 0 9px,transparent 10px),
+        linear-gradient(315deg,#e5a26a55 0 10px,transparent 11px);
+}
+
+.letter-sheet::after{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:43px;
+    width:2px;
+    background:#c74b642e;
+}
+
+.letter-tape{
+    position:absolute;
+    width:92px;
+    height:25px;
+    z-index:8;
+    background:#e9b59cbb;
+    border:1px solid #b97c67;
+}
+
+.letter-tape.left{
+    top:-8px;
+    left:35px;
+    transform:rotate(-8deg);
+}
+
+.letter-tape.right{
+    top:-8px;
+    right:30px;
+    background:#e8a9b9bb;
+    transform:rotate(7deg);
+}
+
+.letter-stamp{
+    position:absolute;
+    top:22px;
+    right:25px;
+    width:65px;
+    height:65px;
+    border:3px dashed #a12845;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    color:#a12845;
+    font-family:"DM Mono";
+    font-size:9px;
+    line-height:1.1;
+    transform:rotate(9deg);
+    z-index:8;
+}
+
+.letter-stamp::before{
+    content:"L + I\A♡ POȘTĂ";
+    white-space:pre;
+}
+
+.letter-doodle{
+    position:absolute;
+    z-index:8;
+    color:#a12845;
+    font-family:"Gochi Hand";
+    pointer-events:none;
+}
+
+.letter-doodle.one{
+    left:16px;
+    top:108px;
+    font-size:24px;
+    transform:rotate(-13deg);
+}
+
+.letter-doodle.two{
+    right:23px;
+    bottom:62px;
+    font-size:25px;
+    transform:rotate(8deg);
+}
+
+.letter-doodle.three{
+    left:58px;
+    bottom:20px;
+    font-size:18px;
+    color:#7c4350;
+    transform:rotate(-3deg);
+}
+
+.letter-sheet h2{
+    position:relative;
+    z-index:7;
+    font-family:"Gochi Hand";
+    color:var(--red);
+    font-size:46px;
+    margin:0 0 14px;
+    transform:rotate(-2deg);
+}
+
+.letter-sheet p{
+    position:relative;
+    z-index:7;
+    font-family:"Gochi Hand";
+    font-size:19px;
+    line-height:1.34;
+    margin:10px 0;
+}
+
+.letter-sheet .highlight{
+    background:linear-gradient(transparent 55%,#f3a9b94f 55% 92%,transparent 92%);
+}
+
+.letter-sheet .sign{
+    position:relative;
+    z-index:7;
+    margin-top:13px;
+    text-align:right;
+    font-family:"Gochi Hand";
+    font-size:25px;
+    color:#9e2440;
+    transform:rotate(-2deg);
+}
+
+.letter-sheet .ps{
+    position:absolute;
+    z-index:7;
+    left:62px;
+    bottom:14px;
+    font-family:"DM Mono";
+    font-size:8px;
+    letter-spacing:.5px;
+    color:#79505a;
+    transform:rotate(-2deg);
+}
+
+.envelope-front{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:58%;
+    z-index:7;
+    background:#dca25f;
+    border-top:3px solid #b8753f;
+    transition:1.05s cubic-bezier(.2,.8,.2,1);
+}
+
+.envelope-front::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(34deg,transparent 49.4%,#efbc78 49.6% 50.2%,transparent 50.4%),
+        linear-gradient(-34deg,transparent 49.4%,#efbc78 49.6% 50.2%,transparent 50.4%);
+}
+
+.envelope-front::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:20px;
+    width:110px;
+    height:4px;
+    border-radius:10px;
+    background:#95522f55;
+    transform:translateX(-50%);
+}
+
+.envelope-big.open .envelope-front{
+    transform:translateY(110%);
+}
+
+.envelope-big.open .letter-sheet{
+    transform:translateY(-54px) rotate(-1.8deg);
+}
+
+.envelope-big .flap{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:60%;
+    background:#efbf7d;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top;
+    transition:1.2s cubic-bezier(.2,.8,.2,1);
+    z-index:9;
+    backface-visibility:hidden;
+}
+
+.envelope-big.open .flap{
+    transform:rotateX(180deg);
+}
+
+.seal{
+    position:absolute;
+    z-index:12;
+    bottom:35px;
+    left:calc(50% - 43px);
+    width:86px;
+    height:86px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#c53c59,#9e2440 60%,#77172f);
+    color:#ffd8dd;
+    border:5px solid #6e172d;
+    display:grid;
+    place-items:center;
+    font-family:"Gochi Hand";
+    font-size:36px;
+    transition:.6s cubic-bezier(.2,.8,.2,1);
+    box-shadow:4px 5px #602031;
+}
+
+.seal::before{
+    content:"";
+    position:absolute;
+    inset:8px;
+    border:2px dashed #e8899e;
+    border-radius:50%;
+}
+
+.envelope-big.open .seal{
+    opacity:0;
+    transform:scale(.3) rotate(-25deg);
+}
+
+.letter-open-note{
+    text-align:center;
+    margin:17px 0 0;
+    font-family:"Gochi Hand";
+    color:#873148;
+    font-size:18px;
+    transform:rotate(1deg);
+}
+
+.letter-wrap .unlock{
+    display:block;
+    margin:30px auto 0;
+    padding:12px 21px;
+    border:3px solid #39202a;
+    border-radius:13px;
+    background:#e34f70;
+    color:#fff;
+    cursor:pointer;
+    box-shadow:4px 5px #8a2d47;
+    font-family:"Gochi Hand";
+    font-size:22px;
+}
+
+.letter-wrap .unlock:hover{
+    transform:translateY(-2px) rotate(-1deg);
+}
+
+.petals{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:200;
+}
+
+.petal{
+    position:absolute;
+    left:50%;
+    top:55%;
+    font-size:var(--s);
+    animation:burst 2.8s forwards;
+    animation-delay:var(--d);
+}
+
+@keyframes burst{
+    0%{
+        transform:translate(-50%,-50%) scale(.2);
+        opacity:0;
+    }
+    15%{opacity:1;}
+    100%{
+        transform:translate(
+            calc(-50% + var(--x)),
+            calc(-50% + var(--y))
+        ) rotate(var(--r));
+        opacity:.95;
+    }
+}
+
+/* =========================================================
+   MEMORIES
+========================================================= */
+
+#memories{
+    padding:0;
+    overflow:auto;
+    background:
+        linear-gradient(135deg,#fff2e5,#ffd7e1 45%,#fff0dc);
+}
+
+.memory-page{
+    position:relative;
+    width:100%;
+    min-height:1100px;
+    padding:90px 5vw 100px;
+    overflow:hidden;
+}
+
+.memory-page::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:.35;
+    background:
+        radial-gradient(#b13b5418 1px,transparent 1px);
+    background-size:18px 18px;
+}
+
+.memory-title{
+    position:absolute;
+    top:70px;
+    left:50%;
+    transform:translateX(-50%) rotate(-2deg);
+    z-index:20;
+    text-align:center;
+    width:max-content;
+}
+
+.memory-title .tiny{
+    font-family:"DM Mono";
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+.memory-title h1{
+    font-family:"Gochi Hand";
+    color:#a12845;
+    font-size:62px;
+    margin:0;
+    line-height:.9;
+    text-shadow:3px 3px white;
+}
+
+.memory-title p{
+    font-family:"Gochi Hand";
+    font-size:19px;
+    margin:9px 0 0;
+}
+
+.memory-note{
+    position:absolute;
+    font-family:"Gochi Hand";
+    color:#9b2947;
+    z-index:18;
+    line-height:1.15;
+}
+
+.note-left{
+    left:4%;
+    top:330px;
+    width:180px;
+    font-size:24px;
+    text-align:center;
+    transform:rotate(-6deg);
+}
+
+.note-top{
+    left:38%;
+    top:250px;
+    width:270px;
+    font-size:22px;
+    text-align:center;
+    transform:rotate(3deg);
+}
+
+.note-right{
+    right:4%;
+    top:555px;
+    width:210px;
+    font-size:23px;
+    text-align:center;
+    transform:rotate(5deg);
+}
+
+.note-bottom{
+    left:42%;
+    bottom:85px;
+    width:250px;
+    font-size:21px;
+    text-align:center;
+    transform:rotate(-3deg);
+}
+
+.memory-photo{
+    position:absolute;
+    z-index:12;
+    background:#fff9eb;
+    padding:10px;
+    box-shadow:5px 8px #6e273a30;
+    transition:.3s;
+}
+
+.memory-photo:hover{
+    transform:translateY(-8px) rotate(0deg) scale(1.04)!important;
+    z-index:80;
+}
+
+.memory-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.memory-caption{
+    font-family:"Gochi Hand";
+    text-align:center;
+    font-size:18px;
+    padding:7px 3px 2px;
+    color:#7e2940;
+}
+
+.photo-big-left{
+    left:15%;
+    top:245px;
+    width:300px;
+    height:340px;
+    transform:rotate(-5deg);
+    border:10px solid #fff9eb;
+}
+
+.photo-big-left img{
+    height:270px;
+}
+
+.photo-big-center{
+    left:39%;
+    top:375px;
+    width:310px;
+    height:350px;
+    transform:rotate(3deg);
+    border:10px solid #fff9eb;
+}
+
+.photo-big-center img{
+    height:280px;
+}
+
+.photo-big-right{
+    right:13%;
+    top:250px;
+    width:300px;
+    height:335px;
+    transform:rotate(6deg);
+    border:10px solid #fff9eb;
+}
+
+.photo-big-right img{
+    height:265px;
+}
+
+.photo-stamp{
+    left:34%;
+    top:160px;
+    width:190px;
+    height:170px;
+    padding:7px;
+    transform:rotate(4deg);
+    background:#f9e6e2;
+    border:8px solid #e7a0b2;
+    outline:3px dotted #a12845;
+    outline-offset:-12px;
+}
+
+.photo-stamp img{
+    height:115px;
+}
+
+.photo-small-right{
+    right:5%;
+    top:610px;
+    width:180px;
+    height:165px;
+    padding:7px;
+    transform:rotate(-3deg);
+    background:#fff4d9;
+    border:7px solid #fff4d9;
+}
+
+.photo-small-right img{
+    height:115px;
+}
+
+.photo-small-bottom{
+    left:13%;
+    bottom:90px;
+    width:185px;
+    height:175px;
+    padding:7px;
+    transform:rotate(-7deg);
+    background:#fff5df;
+}
+
+.photo-small-bottom img{
+    height:120px;
+}
+
+.photo7{
+    left:2%;
+    top:455px;
+    width:175px;
+    height:170px;
+    padding:7px;
+    transform:rotate(7deg);
+    background:#fff5dc;
+}
+
+.photo7 img{
+    height:112px;
+}
+
+.photo8{
+    left:27%;
+    top:735px;
+    width:180px;
+    height:175px;
+    padding:7px;
+    transform:rotate(-8deg);
+    background:#fff9ed;
+}
+
+.photo8 img{
+    height:118px;
+}
+
+.photo9{
+    right:27%;
+    top:735px;
+    width:185px;
+    height:175px;
+    padding:7px;
+    transform:rotate(6deg);
+    background:#f9e7e2;
+}
+
+.photo9 img{
+    height:118px;
+}
+
+.photo10{
+    right:2%;
+    top:420px;
+    width:170px;
+    height:165px;
+    padding:7px;
+    transform:rotate(-7deg);
+    background:#fff4d7;
+}
+
+.photo10 img{
+    height:108px;
+}
+
+.photo11{
+    left:4%;
+    bottom:70px;
+    width:180px;
+    height:165px;
+    padding:7px;
+    transform:rotate(-4deg);
+    background:#fff0dc;
+}
+
+.photo11 img{
+    height:108px;
+}
+
+.photo12{
+    left:30%;
+    bottom:15px;
+    width:175px;
+    height:160px;
+    padding:7px;
+    transform:rotate(8deg);
+    background:#fff5df;
+}
+
+.photo12 img{
+    height:103px;
+}
+
+.photo13{
+    right:31%;
+    bottom:20px;
+    width:175px;
+    height:165px;
+    padding:7px;
+    transform:rotate(-5deg);
+    background:#ffe9df;
+}
+
+.photo13 img{
+    height:108px;
+}
+
+.photo14{
+    right:7%;
+    bottom:80px;
+    width:175px;
+    height:165px;
+    padding:7px;
+    transform:rotate(7deg);
+    background:#fff5df;
+}
+
+.photo14 img{
+    height:108px;
+}
+
+.photo15{
+    left:51%;
+    top:155px;
+    width:175px;
+    height:160px;
+    padding:7px;
+    transform:rotate(-6deg);
+    background:#f8e0e1;
+}
+
+.photo15 img{
+    height:105px;
+}
+
+.photo-tape{
+    position:absolute;
+    width:85px;
+    height:24px;
+    background:#edb1bbaa;
+    z-index:40;
+    pointer-events:none;
+}
+
+.tape-top-left{
+    left:20px;
+    top:-13px;
+    transform:rotate(-5deg);
+}
+
+.tape-top-right{
+    right:20px;
+    top:-12px;
+    background:#f2cf86aa;
+    transform:rotate(6deg);
+}
+
+.tape-center{
+    left:110px;
+    top:-12px;
+    background:#c6addbaa;
+    transform:rotate(-4deg);
+}
+
+.memory-sticker{
+    position:absolute;
+    z-index:70;
+    font-family:"Gochi Hand";
+    color:white;
+    padding:10px 15px;
+    box-shadow:4px 5px #68283a30;
+    pointer-events:none;
+}
+
+.ms-love{
+    left:8%;
+    top:200px;
+    background:#d94f70;
+    border-radius:50%;
+    transform:rotate(-10deg);
+}
+
+.ms-star{
+    right:18%;
+    top:185px;
+    background:#dca63e;
+    border-radius:45%;
+    transform:rotate(8deg);
+}
+
+.ms-cute{
+    left:53%;
+    top:775px;
+    background:#9d72c2;
+    border-radius:50%;
+    transform:rotate(-8deg);
+}
+
+.memory-doodle{
+    position:absolute;
+    z-index:25;
+    font-family:"Gochi Hand";
+    color:#a12845;
+    pointer-events:none;
+}
+
+.md1{
+    left:26%;
+    top:225px;
+    font-size:34px;
+    transform:rotate(-12deg);
+}
+
+.md2{
+    right:29%;
+    top:715px;
+    font-size:38px;
+    transform:rotate(10deg);
+}
+
+.md3{
+    left:8%;
+    bottom:170px;
+    font-size:35px;
+    transform:rotate(-5deg);
+}
+
+/* =========================================================
+   SONG
+========================================================= */
+
+#song{
+    background:
+        linear-gradient(135deg,#ffe8d4,#ffd2df);
+}
+
+.song-wrap{
+    width:min(700px,92vw);
+    margin:100px auto;
+}
+
+.song-player{
+    position:relative;
+    overflow:hidden;
+    background:#fff0dc;
+    border:5px solid #39202a;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:10px 12px #a33d55;
+    transform:rotate(-1deg);
+}
+
+.song-player::before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border:2px dashed #e29aaa;
+    border-radius:18px;
+    pointer-events:none;
+    opacity:.7;
+}
+
+.song-player > *{
+    position:relative;
+    z-index:2;
+}
+
+.album{
+    width:290px;
+    height:290px;
+    margin:auto;
+    display:grid;
+    place-items:center;
+    font-size:105px;
+    background:linear-gradient(135deg,#9f2141,#f48ca5);
+    border:5px solid #39202a;
+    box-shadow:7px 8px #5b2432;
+    position:relative;
+    overflow:hidden;
+    transition:transform .25s ease;
+}
+
+.album::before{
+    content:"";
+    position:absolute;
+    inset:18px;
+    border:3px dashed #ffd9df;
+    border-radius:50%;
+    opacity:.8;
+}
+
+.album::after{
+    content:"♡";
+    position:absolute;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#fff0dc;
+    color:#9f2141;
+    border:4px solid #39202a;
+    font-size:27px;
+    box-shadow:3px 4px #5b2432;
+}
+
+.album.playing{
+    animation:albumSpin 9s linear infinite;
+}
+
+@keyframes albumSpin{
+    to{transform:rotate(360deg);}
+}
+
+.song-name{
+    text-align:center;
+    font-family:"Gochi Hand";
+    font-size:50px;
+    color:var(--red);
+    margin-top:25px;
+}
+
+.artist{
+    text-align:center;
+    font-family:"DM Mono";
+    font-size:12px;
+    letter-spacing:3px;
+}
+
+.song-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:7px 2px 0;
+    font-family:"DM Mono";
+    font-size:11px;
+    color:#753344;
+}
+
+.progress-wrap{
+    margin:22px 0 5px;
+}
+
+.progress{
+    width:100%;
+    height:10px;
+    margin:0;
+    padding:0;
+    appearance:none;
+    -webkit-appearance:none;
+    background:#e5aeba;
+    border:2px solid #51232e;
+    border-radius:10px;
+    cursor:pointer;
+    overflow:hidden;
+}
+
+.progress::-webkit-slider-thumb{
+    appearance:none;
+    -webkit-appearance:none;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#d43f62;
+    border:2px solid #51232e;
+    box-shadow:-500px 0 0 495px #d43f62;
+}
+
+.progress::-moz-range-progress{
+    background:#d43f62;
+    height:100%;
+}
+
+.progress::-moz-range-thumb{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:#d43f62;
+    border:2px solid #51232e;
+}
+
+.audio-controls{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:13px;
+    margin-top:18px;
+}
+
+.play-main{
+    width:76px;
+    height:62px;
+    border:3px solid #391b24;
+    border-radius:17px;
+    background:#e34f70;
+    color:white;
+    cursor:pointer;
+    font-size:25px;
+    box-shadow:4px 5px #8a2d47;
+    transition:.15s;
+}
+
+.play-main:hover,
+.audio-small:hover{
+    transform:translateY(-3px) rotate(-1deg);
+}
+
+.play-main:active,
+.audio-small:active{
+    transform:translateY(2px);
+    box-shadow:1px 2px #8a2d47;
+}
+
+.audio-small{
+    width:52px;
+    height:50px;
+    border:3px solid #391b24;
+    border-radius:14px;
+    background:#fff0dc;
+    color:#a12845;
+    cursor:pointer;
+    font-size:19px;
+    box-shadow:3px 4px #8a2d47;
+    transition:.15s;
+}
+
+.volume-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top:17px;
+    font-family:"DM Mono";
+    font-size:10px;
+    color:#753344;
+}
+
+.volume{
+    width:145px;
+    accent-color:#d43f62;
+    cursor:pointer;
+}
+
+.equalizer{
+    height:30px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    gap:4px;
+    margin:15px 0 0;
+}
+
+.equalizer span{
+    width:5px;
+    height:8px;
+    background:#d43f62;
+    border-radius:5px 5px 0 0;
+    opacity:.35;
+}
+
+.equalizer.playing span{
+    opacity:1;
+    animation:equalize .65s ease-in-out infinite alternate;
+}
+
+.equalizer span:nth-child(2){animation-delay:.1s}
+.equalizer span:nth-child(3){animation-delay:.25s}
+.equalizer span:nth-child(4){animation-delay:.05s}
+.equalizer span:nth-child(5){animation-delay:.32s}
+.equalizer span:nth-child(6){animation-delay:.16s}
+
+@keyframes equalize{
+    from{height:7px}
+    to{height:27px}
+}
+
+.song-note{
+    font-family:"Gochi Hand";
+    font-size:20px;
+    text-align:center;
+    line-height:1.3;
+    margin:18px auto 0;
+    max-width:490px;
+}
+
+.song-note .highlight{
+    color:#a12845;
+    background:linear-gradient(
+        transparent 55%,
+        #f4a8b8 56% 90%,
+        transparent 91%
+    );
+}
+
+.song-status{
+    text-align:center;
+    margin-top:9px;
+    min-height:18px;
+    font-family:"DM Mono";
+    font-size:10px;
+    letter-spacing:1px;
+    color:#9e2440;
+}
+
+.audio-sticker{
+    position:absolute;
+    z-index:5;
+    background:#fff0dc;
+    border:2px solid #39202a;
+    padding:8px 12px;
+    font-family:"Gochi Hand";
+    font-size:18px;
+    box-shadow:4px 5px #9e244033;
+}
+
+.audio-sticker.a1{
+    top:165px;
+    left:7%;
+    transform:rotate(-8deg);
+}
+
+.audio-sticker.a2{
+    top:390px;
+    right:8%;
+    background:#fff09a;
+    transform:rotate(7deg);
+}
+
+.audio-sticker.a3{
+    bottom:80px;
+    left:12%;
+    background:#e4c9ef;
+    transform:rotate(4deg);
+}
+
+/* =========================================================
+   SECRET
+========================================================= */
+
+#secret{
+    background:
+        linear-gradient(135deg,#ffe9d4,#ffd1df);
+}
+
+.secret-wrap{
+    width:min(700px,90vw);
+    margin:100px auto;
+    text-align:center;
+}
+
+.safe{
+    background:#fff0dc;
+    border:5px solid #39202a;
+    padding:45px;
+    border-radius:28px;
+    box-shadow:10px 12px #a33d55;
+    transform:rotate(1deg);
+    position:relative;
+    overflow:hidden;
+}
+
+.safe h2{
+    font-family:"Gochi Hand";
+    color:var(--red);
+    font-size:58px;
+    margin:5px 0 20px;
+}
+
+.secret-input{
+    width:260px;
+    padding:13px;
+    font-family:"DM Mono";
+    font-size:22px;
+    border:3px solid #39202a;
+    border-radius:12px;
+    text-align:center;
+    background:#fffaf1;
+}
+
+.secret-unlock{
+    margin-top:15px;
+    padding:12px 22px;
+    border:3px solid #39202a;
+    border-radius:12px;
+    background:#e34f70;
+    color:white;
+    cursor:pointer;
+    font-family:"DM Mono";
+    font-weight:bold;
+    transition:.2s;
+}
+
+.secret-unlock:hover{
+    transform:rotate(-2deg) scale(1.05);
+}
+
+.secret-success{
+    display:none;
+}
+
+.secret-success.show{
+    display:block;
+    animation:secretReveal .7s cubic-bezier(.17,.89,.32,1.4) forwards;
+}
+
+.secret-stamp{
+    display:inline-block;
+    padding:6px 13px;
+    border:3px solid #a12845;
+    color:#a12845;
+    font-family:"DM Mono";
+    font-size:12px;
+    transform:rotate(-4deg);
+    margin-bottom:5px;
+}
+
+.make-wish{
+    font-family:"Gochi Hand";
+    color:#a12845;
+    font-size:27px;
+    margin-top:4px;
+    transform:rotate(-2deg);
+}
+
+.final-message{
+    display:none;
+    margin-top:30px;
+    font-family:"Gochi Hand";
+    color:#8f2340;
+    font-size:32px;
+    line-height:1.3;
+}
+
+.final-message.show{
+    display:block;
+}
+
+@keyframes secretReveal{
+    0%{
+        opacity:0;
+        transform:scale(.6) rotate(-5deg);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1) rotate(0);
+    }
+}
+
+/* =========================================================
+   CAKE
+========================================================= */
+
+.cake-scene{
+    width:270px;
+    height:235px;
+    margin:0 auto;
+    position:relative;
+}
+
+.cake{
+    width:250px;
+    height:220px;
+    position:absolute;
+    left:10px;
+    bottom:0;
+}
+
+.cake-plate{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:250px;
+    height:28px;
+    background:#f2a9ba;
+    border:4px solid #55212d;
+    border-radius:50%;
+    box-shadow:0 5px #8c344a;
+}
+
+.cake-bottom{
+    position:absolute;
+    left:25px;
+    bottom:22px;
+    width:200px;
+    height:70px;
+    background:#df7190;
+    border:4px solid #55212d;
+    border-radius:12px 12px 18px 18px;
+}
+
+.cake-middle{
+    position:absolute;
+    left:35px;
+    bottom:82px;
+    width:180px;
+    height:58px;
+    background:#fff0dc;
+    border:4px solid #55212d;
+    border-radius:13px 13px 8px 8px;
+}
+
+.cake-frosting{
+    position:absolute;
+    left:28px;
+    bottom:124px;
+    width:194px;
+    height:48px;
+    background:#ffd9e3;
+    border:4px solid #55212d;
+    border-radius:20px 20px 10px 10px;
+}
+
+.drip{
+    position:absolute;
+    width:22px;
+    height:27px;
+    background:#ffd9e3;
+    border-bottom:4px solid #55212d;
+    border-radius:0 0 15px 15px;
+}
+
+.drip.d1{left:30px;top:30px}
+.drip.d2{left:83px;top:30px;height:34px}
+.drip.d3{right:35px;top:30px;height:25px}
+
+.sprinkle{
+    position:absolute;
+    width:8px;
+    height:3px;
+    background:#d83e63;
+    border-radius:5px;
+}
+
+.s1{left:55px;top:18px;transform:rotate(20deg)}
+.s2{left:110px;top:13px;transform:rotate(-20deg)}
+.s3{right:52px;top:22px;transform:rotate(15deg)}
+.s4{left:92px;top:37px;transform:rotate(40deg)}
+
+.candle{
+    position:absolute;
+    left:118px;
+    bottom:170px;
+    width:18px;
+    height:48px;
+    background:#f5d47e;
+    border:3px solid #55212d;
+    border-radius:5px;
+}
+
+.candle::after{
+    content:"";
+    position:absolute;
+    top:-17px;
+    left:3px;
+    width:7px;
+    height:17px;
+    background:#4b2028;
+    border-radius:50%;
+}
+
+.flame{
+    position:absolute;
+    left:117px;
+    bottom:224px;
+    width:22px;
+    height:32px;
+    background:#f5b53f;
+    border:3px solid #55212d;
+    border-radius:55% 55% 55% 55%;
+    transform:rotate(3deg);
+    animation:flicker .55s ease-in-out infinite alternate;
+}
+
+.flame::after{
+    content:"";
+    position:absolute;
+    width:9px;
+    height:16px;
+    left:4px;
+    top:7px;
+    background:#fff0a5;
+    border-radius:50%;
+}
+
+.cake-heart{
+    position:absolute;
+    right:57px;
+    bottom:45px;
+    color:#fff0dc;
+    font-size:31px;
+}
+
+@keyframes secretReveal{
+    from{
+        opacity:0;
+        transform:scale(.5) rotate(-6deg);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) rotate(0);
+    }
+}
+
+@keyframes cakePop{
+    0%{
+        transform:translateY(80px) scale(.3) rotate(-8deg);
+        opacity:0;
+    }
+    70%{
+        transform:translateY(-10px) scale(1.08) rotate(2deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(0) scale(1) rotate(0);
+        opacity:1;
+    }
+}
+
+@keyframes flicker{
+    from{
+        transform:rotate(-4deg) scale(.94);
+    }
+    to{
+        transform:rotate(5deg) scale(1.08);
+    }
+}
+
+.confetti{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:200;
+    overflow:hidden;
+}
+
+.conf{
+    position:absolute;
+    top:-30px;
+    width:10px;
+    height:17px;
+    border-radius:2px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-30px) rotate(0deg);
+        opacity:1;
+    }
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:.1;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .menu-title{
+        top:4%;
+    }
+
+    .menu-title h1{
+        font-size:52px;
+    }
+
+    .menu-title p{
+        font-size:16px;
+    }
+
+    .gift .card{
+        width:190px;
+        min-height:145px;
+        padding:23px 20px;
+    }
+
+    .card h2{
+        font-size:29px;
+    }
+
+    .card p{
+        font-size:14px;
+    }
+
+    .card-icon{
+        font-size:40px;
+    }
+
+    .g1{
+        left:3%;
+        top:34%;
+    }
+
+    .g2{
+        right:3%;
+        top:33%;
+    }
+
+    .g3{
+        left:4%;
+        bottom:12%;
+    }
+
+    .g4{
+        right:4%;
+        bottom:12%;
+    }
+
+    .cute-sticker{
+        transform:scale(.8);
+    }
+
+    
+
+@media(max-height:750px) and (min-width:701px){
+
+    .menu-title{
+        top:2%;
+    }
+
+    .menu-title h1{
+        font-size:60px;
+    }
+
+    .g1{
+        top:33%;
+    }
+
+    .g2{
+        top:31%;
+    }
+
+    .g3,
+    .g4{
+        bottom:5%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     PASSWORD
+===================================================== -->
+
+<section id="lock">
+
+    <div class="lock-doodle ld1">♡ e ceva important</div>
+    <div class="lock-doodle ld2">✦ să nu uiți</div>
+
+    <div class="lock-card">
+
+        <div style="font-size:34px">♡ ✦ ♡</div>
+
+        <h1>Introdu codul</h1>
+
+        <div class="hint">
+            Indiciu: ziua în care s-a schimbat totul :)
+        </div>
+
+        <div class="code" id="code">
+            <div class="digit"></div>
+            <div class="digit"></div>
+            <div class="digit"></div>
+            <div class="digit">♡</div>
+        </div>
+
+        <div class="keypad">
+
+            <button class="key" onclick="press('1')">1</button>
+            <button class="key" onclick="press('2')">2</button>
+            <button class="key" onclick="press('3')">3</button>
+
+            <button class="key" onclick="press('4')">4</button>
+            <button class="key" onclick="press('5')">5</button>
+            <button class="key" onclick="press('6')">6</button>
+
+            <button class="key" onclick="press('7')">7</button>
+            <button class="key" onclick="press('8')">8</button>
+            <button class="key" onclick="press('9')">9</button>
+
+            <button class="key" onclick="clearCode()">ȘTERGE</button>
+            <button class="key" onclick="press('0')">0</button>
+            <button class="key heart" onclick="submitCode()">♡</button>
+
+        </div>
+
+        <div class="wrong" id="wrong"></div>
+
+        <div class="lock-note">
+            psst... sunt patru cifre. le știi :)
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN MENU
+===================================================== -->
+
+<section id="menu">
+
+    <div class="menu-title">
+
+        <div class="tiny">
+            ✦ 06.10 / undeva pe internet ✦
+        </div>
+
+        <h1>alege un cadou ♡</h1>
+
+        <p>
+            am făcut un mic haos pe internet special pentru tine
+        </p>
+
+        <div class="scribble-line"></div>
+
+    </div>
+
+
+    <div class="doodle doodle-heart dh1">♡</div>
+    <div class="doodle doodle-heart dh2">♡</div>
+
+    <div class="menu-note mn1">
+        făcut special<br>
+        pentru tine :)
+    </div>
+
+    <div class="menu-note mn2">
+        nu te gândi prea mult<br>
+        doar apasă pe lucruri
+    </div>
+
+    <div class="menu-note mn3">
+        hehe ♡
+    </div>
+
+    <div class="tape tape1"></div>
+    <div class="tape tape2"></div>
+    <div class="tape tape3"></div>
+
+
+    <!-- Stickerele cu inimioare rămân; cele cu personaje au fost eliminate. -->
+    <div class="love-sticker love1">♡</div>
+    <div class="love-sticker love2">♥</div>
+    <div class="love-sticker love3">♡ Te iubescc ♡</div>
+    <div class="love-sticker love4">♡</div>
+
+    <div class="bow-sticker bow1">🎀</div>
+    <div class="bow-sticker bow2">🎀</div>
+
+    <div class="mini-sticker ms1">ești prea drăguță</div>
+    <div class="mini-sticker ms2">Frumoasa certificată ♡</div>
+    <div class="mini-sticker ms3">★ iubită ★</div>
+    <div class="mini-sticker ms4">făcut cu drag</div>
+    <div class="mini-sticker ms5">hehe ♡</div>
+
+
+    <!-- CADOU 1 -->
+
+    <div class="gift g1" onclick="openGift('letter')">
+
+        <div class="card-label">CADOU #1</div>
+
+        <div class="card">
+
+            <h2>o scrisoare</h2>
+
+            <p>
+                ceva ce voiam să-ți spun fără să-ți dau doar un mesaj
+            </p>
+
+            <div class="card-icon">💌</div>
+
+            <div class="card-doodle">
+                deschide-mă
+                <span>↓</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CADOU 2 -->
+
+    <div class="gift g2" onclick="openGift('memories')">
+
+        <div class="card-label">CADOU #2</div>
+
+        <div class="card">
+
+            <h2>amintiri</h2>
+
+            <p>
+                toate lucrurile mici care au devenit amintiri mari
+            </p>
+
+            <div class="card-icon">📸</div>
+
+            <div class="card-doodle">
+                uite aici
+                <span>↓</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CADOU 3 -->
+
+    <div class="gift g3" onclick="openGift('song')">
+
+        <div class="card-label">CADOU #3</div>
+
+        <div class="card">
+
+            <h2>Compass</h2>
+
+            <p>
+                știi deja ce melodie este :)
+            </p>
+
+            <div class="card-icon">🎧</div>
+
+            <div class="card-doodle">
+                apasă pe ▶
+                <span>↓</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CADOU 4 -->
+
+    <div class="gift g4" onclick="openGift('secret')">
+
+        <div class="card-label">NU DESCHIDE</div>
+
+        <div class="card">
+
+            <h2>secret</h2>
+
+            <p>
+                serios, nu apăsa aici. sau... poate da.
+            </p>
+
+            <div class="card-icon">🔐</div>
+
+            <div class="card-doodle">
+                nu deschide
+                <span>↓</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GIFT VIEW
+===================================================== -->
+
+<section id="giftView">
+
+    <button class="back" onclick="backMenu()">← înapoi la cadouri</button>
+
+
+    <!-- =================================================
+         LETTER
+    ================================================== -->
+
+    <div id="letter" class="view" style="display:none">
+
+        <div class="page-sticker page-love1">♡</div>
+        <div class="page-sticker page-love2">♥</div>
+
+        <div class="letter-scribble">
+            am emoții aici :')
+        </div>
+
+        <div class="letter-wrap">
+
+            <h1>pentru tine ♡</h1>
+
+            <div class="envelope-big" id="env">
+
+                <div class="letter-sheet">
+
+                    <div class="letter-tape left"></div>
+                    <div class="letter-tape right"></div>
+
+                    <div class="letter-stamp"></div>
+
+                    <div class="letter-doodle one">
+                        ♡
+                    </div>
+
+                    <div class="letter-doodle two">
+                        ✦
+                    </div>
+
+                    <div class="letter-doodle three">
+                        făcut pentru tine
+                    </div>
+
+                    <h2>Dragă Ioana,</h2>
+
+                    <p>
+                        Voiam să-ți scriu ceva care să fie puțin mai mult
+                        decât un simplu „la mulți ani”.
+                    </p>
+
+                    <p>
+                        Ești unul dintre oamenii aceia care reușesc să facă
+                        lucrurile din jurul lor să pară mai frumoase doar
+                        fiindcă sunt acolo.
+                    </p>
+
+                    <p>
+                        Îmi place foarte mult la tine faptul că ești
+                        <span class="highlight">bună, atentă și sinceră</span>
+                        și că ai un fel al tău de a face oamenii să se simtă
+                        bine.
+                    </p>
+
+                    <p>
+                        Sper să nu uiți niciodată cât de multe lucruri
+                        frumoase ai în tine și cât de mult meriți să ai parte
+                        de ele.
+                    </p>
+
+                    <p>
+                        La mulți ani, Ioana. ♡
+                    </p>
+
+                    <div class="sign">
+                        Cu drag,<br>
+                        Luki ♡
+                    </div>
+
+                    <div class="ps">
+                        p.s. da, chiar am făcut un site întreg pentru asta :)
+                    </div>
+
+                </div>
+
+
+                <div class="flap"></div>
+
+                <div class="envelope-front"></div>
+
+                <div class="seal">
+                    L
+                </div>
+
+            </div>
+
+            <div class="letter-open-note">
+                plicul e aici pentru un motiv...
+            </div>
+
+            <button class="unlock" onclick="openLetter()">
+                deschide scrisoarea ♡
+            </button>
+
+        </div>
+
+        <div class="petals" id="petals"></div>
+
+    </div>
+
+
+    <!-- =================================================
+         MEMORIES
+    ================================================== -->
+
+    <div id="memories" class="view" style="display:none">
+
+        <div class="memory-page">
+
+            <div class="memory-title">
+
+                <div class="tiny">
+                    ARHIVA TA ♡
+                </div>
+
+                <h1>mici amintiri</h1>
+
+                <p>
+                    toate lucrurile care merită păstrate
+                </p>
+
+            </div>
+
+
+            <div class="memory-note note-left">
+                nu știu când<br>
+                s-au strâns<br>
+                atâtea poze :)
+            </div>
+
+            <div class="memory-note note-top">
+                unele momente sunt mici<br>
+                dar rămân foarte mult timp
+            </div>
+
+            <div class="memory-note note-right">
+                dovada că avem<br>
+                destule amintiri ♡
+            </div>
+
+            <div class="memory-note note-bottom">
+                și încă nu s-a terminat
+            </div>
+
+
+            <div class="memory-sticker ms-love">
+                ♡ drag
+            </div>
+
+            <div class="memory-sticker ms-star">
+                ★ moment
+            </div>
+
+            <div class="memory-sticker ms-cute">
+                prea drăguț ♡
+            </div>
+
+
+            <div class="memory-doodle md1">♡ ✦ ♡</div>
+            <div class="memory-doodle md2">✦</div>
+            <div class="memory-doodle md3">♡</div>
+
+
+            <!-- 15 POZE -->
+
+            <div class="memory-photo photo-big-left">
+                <div class="photo-tape tape-top-left"></div>
+                <img src="photos/photo1.jpg" alt="Amintire 1">
+                <div class="memory-caption">un moment frumos ♡</div>
+            </div>
+
+            <div class="memory-photo photo-big-center">
+                <div class="photo-tape tape-center"></div>
+                <img src="photos/photo2.jpg" alt="Amintire 2">
+                <div class="memory-caption">noi, pur și simplu</div>
+            </div>
+
+            <div class="memory-photo photo-big-right">
+                <div class="photo-tape tape-top-right"></div>
+                <img src="photos/photo3.jpg" alt="Amintire 3">
+                <div class="memory-caption">încă o amintire ♡</div>
+            </div>
+
+            <div class="memory-photo photo-stamp">
+                <img src="photos/photo4.jpg" alt="Amintire 4">
+                <div class="memory-caption">momentul ăla</div>
+            </div>
+
+            <div class="memory-photo photo-small-right">
+                <img src="photos/photo5.jpg" alt="Amintire 5">
+                <div class="memory-caption">hehe</div>
+            </div>
+
+            <div class="memory-photo photo-small-bottom">
+                <img src="photos/photo6.jpg" alt="Amintire 6">
+                <div class="memory-caption">♡</div>
+            </div>
+
+            <div class="memory-photo photo7">
+                <img src="photos/photo7.jpg" alt="Amintire 7">
+                <div class="memory-caption">mic moment</div>
+            </div>
+
+            <div class="memory-photo photo8">
+                <img src="photos/photo8.jpg" alt="Amintire 8">
+                <div class="memory-caption">prea bună poza asta</div>
+            </div>
+
+            <div class="memory-photo photo9">
+                <img src="photos/photo9.jpg" alt="Amintire 9">
+                <div class="memory-caption">încă una ♡</div>
+            </div>
+
+            <div class="memory-photo photo10">
+                <img src="photos/photo10.jpg" alt="Amintire 10">
+                <div class="memory-caption">hehe ♡</div>
+            </div>
+
+            <div class="memory-photo photo11">
+                <img src="photos/photo11.jpg" alt="Amintire 11">
+                <div class="memory-caption">un lucru mic</div>
+            </div>
+
+            <div class="memory-photo photo12">
+                <img src="photos/photo12.jpg" alt="Amintire 12">
+                <div class="memory-caption">♡</div>
+            </div>
+
+            <div class="memory-photo photo13">
+                <img src="photos/photo13.jpg" alt="Amintire 13">
+                <div class="memory-caption">îmi place asta</div>
+            </div>
+
+            <div class="memory-photo photo14">
+                <img src="photos/photo14.jpg" alt="Amintire 14">
+                <div class="memory-caption">încă o zi frumoasă</div>
+            </div>
+
+            <div class="memory-photo photo15">
+                <img src="photos/photo15.jpg" alt="Amintire 15">
+                <div class="memory-caption">și asta ♡</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         SONG
+    ================================================== -->
+
+    <div id="song" class="view" style="display:none">
+
+        <div class="audio-sticker a1">
+            apasă pe ▶ ♡
+        </div>
+
+        <div class="audio-sticker a2">
+            sunet pornit :)
+        </div>
+
+        <div class="audio-sticker a3">
+            pentru tine
+        </div>
+
+
+        <div class="song-wrap">
+
+            <div class="song-player">
+
+                <div class="album" id="album">
+                    🧭
+                </div>
+
+                <div class="song-name">
+                    Compass
+                </div>
+
+                <div class="artist">
+                    THE NEIGHBOURHOOD
+                </div>
+
+
+                <div class="progress-wrap">
+
+                    <input
+                        class="progress"
+                        id="songProgress"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="0"
+                    >
+
+                    <div class="song-meta">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+
+                </div>
+
+
+                <div class="audio-controls">
+
+                    <button
+                        class="audio-small"
+                        onclick="restartSong()"
+                        title="Repornește"
+                    >
+                        ↺
+                    </button>
+
+                    <button
+                        class="play-main"
+                        id="playButton"
+                        onclick="playSong()"
+                    >
+                        ▶
+                    </button>
+
+                    <button
+                        class="audio-small"
+                        onclick="toggleMute()"
+                        id="muteButton"
+                        title="Sunet"
+                    >
+                        🔊
+                    </button>
+
+                </div>
+
+
+                <div class="volume-row">
+
+                    <span>volum</span>
+
+                    <input
+                        class="volume"
+                        id="volume"
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="0.8"
+                    >
+
+                </div>
+
+
+                <div class="equalizer" id="equalizer">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+                <div class="song-note">
+
+                    Poate că unele melodii sunt doar melodii.
+                    Iar unele rămân cu tine.
+                    <span class="highlight">
+                        Tu știi de ce am pus-o aici. ♡
+                    </span>
+
+                </div>
+
+                <div class="song-status" id="songStatus">
+                    pregătit
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         SECRET
+    ================================================== -->
+
+    <div id="secret" class="view" style="display:none">
+
+
+        <div class="secret-wrap">
+
+            <div class="safe">
+
+                <div id="secretQuestion">
+
+                    <div style="font-size:55px">
+                        🔐
+                    </div>
+
+                    <h2>
+                        ai găsit secretul
+                    </h2>
+
+                    <p style="font-family:'Gochi Hand';font-size:22px;">
+                        Bine... încă o parolă mică.
+                        <br>
+                        Ce ar pune probabil Luki aici?
+                    </p>
+
+                    <input
+                        class="secret-input"
+                        id="secretInput"
+                        type="text"
+                        autocomplete="off"
+                        placeholder="scrie parola..."
+                    >
+
+                    <br>
+
+                    <button
+                        class="secret-unlock"
+                        onclick="unlockSecret()"
+                    >
+                        încearcă ♡
+                    </button>
+
+                    <div
+                        id="secretWrong"
+                        style="
+                            min-height:22px;
+                            margin-top:10px;
+                            color:#a12845;
+                            font-family:'Gochi Hand';
+                        "
+                    ></div>
+
+                </div>
+
+
+                <div
+                    id="secretSuccess"
+                    class="secret-success"
+                >
+
+                    <div class="secret-stamp">
+                        SECRET DEBLOCAT ♡
+                    </div>
+
+                    <div class="cake-scene">
+
+                        <div class="cake">
+
+                            <div class="cake-plate"></div>
+
+                            <div class="cake-bottom"></div>
+
+                            <div class="cake-middle"></div>
+
+                            <div class="cake-frosting">
+
+                                <div class="drip d1"></div>
+                                <div class="drip d2"></div>
+                                <div class="drip d3"></div>
+
+                                <div class="sprinkle s1"></div>
+                                <div class="sprinkle s2"></div>
+                                <div class="sprinkle s3"></div>
+                                <div class="sprinkle s4"></div>
+
+                            </div>
+
+                            <div class="candle"></div>
+
+                            <div class="flame"></div>
+
+                            <div class="cake-heart">
+                                ♡
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="make-wish">
+                        pune-ți o dorință 🎂
+                    </div>
+
+
+                    <div
+                        id="finalMessage"
+                        class="final-message"
+                    >
+                        La mulți ani, Ioana! ♡
+                        <br>
+                        Sper să ai o zi la fel de frumoasă
+                        ca tine.
+                        <br><br>
+                        Și da... acesta era ultimul secret. :)
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="confetti"
+            id="confetti"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================================================
+   COD PRINCIPAL
+========================================================= */
+
+let entered = '';
+
+const CODE = '0610';
+
+function press(n){
+
+    if(entered.length >= 4) return;
+
+    entered += n;
+
+    renderCode();
+
+    document.getElementById('wrong').textContent = '';
+
+}
+
+function clearCode(){
+
+    entered = entered.slice(0,-1);
+
+    renderCode();
+
+}
+
+function renderCode(){
+
+    const digits =
+        document.querySelectorAll('#code .digit');
+
+    digits.forEach((digit,index)=>{
+
+        digit.textContent =
+            index < entered.length
+                ? '•'
+                : (index === 3 && entered.length === 0 ? '♡' : '');
+
+    });
+
+}
+
+function submitCode(){
+
+    if(entered === CODE){
+
+        document.getElementById('lock').style.display='none';
+
+        document.getElementById('menu').style.display='block';
+
+        entered='';
+
+        renderCode();
+
+    }else{
+
+        const wrong =
+            document.getElementById('wrong');
+
+        wrong.textContent='hmm... nu chiar 😭';
+
+        entered='';
+
+        renderCode();
+
+    }
+
+}
+
+
+/* =========================================================
+   CADOURI
+========================================================= */
+
+function openGift(id){
+
+    document.getElementById('menu').style.display='none';
+
+    document.getElementById('giftView').style.display='block';
+
+    const views=[
+        'letter',
+        'memories',
+        'song',
+        'secret'
+    ];
+
+    views.forEach(view=>{
+
+        const element =
+            document.getElementById(view);
+
+        if(element){
+
+            element.style.display =
+                view===id
+                    ? 'block'
+                    : 'none';
+
+        }
+
+    });
+
+    if(id==='song'){
+
+        updateSongUI();
+
+    }
+
+}
+
+function backMenu(){
+
+    document.getElementById('giftView').style.display='none';
+
+    document.getElementById('menu').style.display='block';
+
+    const env =
+        document.getElementById('env');
+
+    if(env){
+
+        env.classList.remove('open');
+
+    }
+
+    const unlock =
+        document.querySelector('#letter .unlock');
+
+    if(unlock){
+
+        unlock.style.display='block';
+
+    }
+
+    const petals =
+        document.getElementById('petals');
+
+    if(petals){
+
+        petals.innerHTML='';
+
+    }
+
+}
+
+
+/* =========================================================
+   SCRISOARE
+========================================================= */
+
+function openLetter(){
+
+    const env =
+        document.getElementById('env');
+
+    const button =
+        document.querySelector('#letter .unlock');
+
+    env.classList.add('open');
+
+    button.style.display='none';
+
+
+    const petals =
+        document.getElementById('petals');
+
+    petals.innerHTML='';
+
+
+    const symbols=[
+        '♡',
+        '♥',
+        '✦',
+        '✧',
+        '🌸'
+    ];
+
+
+    for(let i=0;i<110;i++){
+
+        const petal =
+            document.createElement('span');
+
+        petal.className='petal';
+
+        petal.textContent =
+            symbols[
+                Math.floor(
+                    Math.random()*symbols.length
+                )
+            ];
+
+        petal.style.setProperty(
+            '--x',
+            `${(Math.random()-.5)*1100}px`
+        );
+
+        petal.style.setProperty(
+            '--y',
+            `${(Math.random()-.5)*700}px`
+        );
+
+        petal.style.setProperty(
+            '--r',
+            `${Math.random()*720-360}deg`
+        );
+
+        petal.style.setProperty(
+            '--s',
+            `${14+Math.random()*20}px`
+        );
+
+        petal.style.setProperty(
+            '--d',
+            `${Math.random()*.8}s`
+        );
+
+        petals.appendChild(petal);
+
+    }
+
+}
+
+
+/* =========================================================
+   PLAYER AUDIO
+========================================================= */
+
+const audio =
+    new Audio('audio/compass.mp3');
+
+audio.preload='metadata';
+
+let isPlaying=false;
+
+const progress =
+    document.getElementById('songProgress');
+
+const volume =
+    document.getElementById('volume');
+
+const playButton =
+    document.getElementById('playButton');
+
+const muteButton =
+    document.getElementById('muteButton');
+
+const album =
+    document.getElementById('album');
+
+const equalizer =
+    document.getElementById('equalizer');
+
+const currentTime =
+    document.getElementById('currentTime');
+
+const duration =
+    document.getElementById('duration');
+
+const songStatus =
+    document.getElementById('songStatus');
+
+
+function getSong(){
+
+    return audio;
+
+}
+
+
+function formatTime(seconds){
+
+    if(!Number.isFinite(seconds))
+        return '0:00';
+
+    const minutes =
+        Math.floor(seconds/60);
+
+    const secs =
+        Math.floor(seconds%60)
+            .toString()
+            .padStart(2,'0');
+
+    return `${minutes}:${secs}`;
+
+}
+
+
+function updateSongUI(){
+
+    if(!audio) return;
+
+    if(audio.duration){
+
+        progress.value =
+            (audio.currentTime/audio.duration)*100 || 0;
+
+        duration.textContent =
+            formatTime(audio.duration);
+
+    }
+
+    currentTime.textContent =
+        formatTime(audio.currentTime);
+
+}
+
+
+function setPlayingState(playing){
+
+    isPlaying=playing;
+
+    if(playing){
+
+        playButton.textContent='❚❚';
+
+        album.classList.add('playing');
+
+        equalizer.classList.add('playing');
+
+        songStatus.textContent='redare...';
+
+    }else{
+
+        playButton.textContent='▶';
+
+        album.classList.remove('playing');
+
+        equalizer.classList.remove('playing');
+
+        songStatus.textContent='oprit';
+
+    }
+
+}
+
+
+async function playSong(){
+
+    try{
+
+        if(audio.paused){
+
+            await audio.play();
+
+            setPlayingState(true);
+
+        }else{
+
+            audio.pause();
+
+            setPlayingState(false);
+
+        }
+
+    }catch(error){
+
+        songStatus.textContent=
+            'nu s-a putut reda melodia';
+
+    }
+
+}
+
+
+function restartSong(){
+
+    audio.currentTime=0;
+
+    if(audio.paused){
+
+        audio.play()
+            .then(()=>{
+                setPlayingState(true);
+            })
+            .catch(()=>{});
+
+    }
+
+}
+
+
+function toggleMute(){
+
+    audio.muted=!audio.muted;
+
+    muteButton.textContent =
+        audio.muted
+            ? '🔇'
+            : '🔊';
+
+}
+
+
+function setupAudio(){
+
+    audio.volume =
+        Number(volume.value);
+
+    audio.addEventListener(
+        'loadedmetadata',
+        updateSongUI
+    );
+
+    audio.addEventListener(
+        'timeupdate',
+        updateSongUI
+    );
+
+    audio.addEventListener(
+        'play',
+        ()=>{
+            setPlayingState(true);
+        }
+    );
+
+    audio.addEventListener(
+        'pause',
+        ()=>{
+            setPlayingState(false);
+        }
+    );
+
+    audio.addEventListener(
+        'ended',
+        ()=>{
+            setPlayingState(false);
+            audio.currentTime=0;
+            updateSongUI();
+            songStatus.textContent='gata ♡';
+        }
+    );
+
+    progress.addEventListener(
+        'input',
+        ()=>{
+            if(audio.duration){
+
+                audio.currentTime =
+                    (Number(progress.value)/100)
+                    *audio.duration;
+
+            }
+        }
+    );
+
+    volume.addEventListener(
+        'input',
+        ()=>{
+            audio.volume =
+                Number(volume.value);
+        }
+    );
+
+}
+
+setupAudio();
+
+
+/* =========================================================
+   SECRET
+========================================================= */
+
+function unlockSecret(){
+
+    const input =
+        document.getElementById('secretInput');
+
+    const wrong =
+        document.getElementById('secretWrong');
+
+    const value =
+        input.value.trim().toLowerCase();
+
+
+    /*
+        Parola pentru "NU DESCHIDE":
+        ioana
+    */
+
+    const acceptedPassword='ioana';
+
+
+    if(value===acceptedPassword){
+
+        document
+            .getElementById('secretQuestion')
+            .style.display='none';
+
+        const success =
+            document.getElementById('secretSuccess');
+
+        success.classList.add('show');
+
+
+        const cake =
+            document.querySelector('.cake-scene');
+
+        cake.style.animation=
+            'cakePop .9s cubic-bezier(.17,.89,.32,1.4) forwards';
+
+
+        const finalMessage =
+            document.getElementById('finalMessage');
+
+        setTimeout(()=>{
+
+            finalMessage.classList.add('show');
+
+        },700);
+
+
+        createConfetti();
+
+        input.value='';
+
+        wrong.textContent='';
+
+
+    }else{
+
+        wrong.textContent=
+            'hmm... parola nu este asta :(';
+
+        input.classList.remove('shake');
+
+        void input.offsetWidth;
+
+        input.classList.add('shake');
+
+        input.value='';
+
+    }
+
+}
+
+
+function createConfetti(){
+
+    const confetti =
+        document.getElementById('confetti');
+
+    confetti.innerHTML='';
+
+
+    const symbols=[
+        '♡',
+        '♥',
+        '✦',
+        '✧',
+        '•'
+    ];
+
+
+    for(let i=0;i<90;i++){
+
+        const piece =
+            document.createElement('span');
+
+        piece.className='conf';
+
+        piece.textContent=
+            symbols[
+                Math.floor(
+                    Math.random()*symbols.length
+                )
+            ];
+
+        piece.style.left=
+            `${Math.random()*100}%`;
+
+        piece.style.fontSize=
+            `${10+Math.random()*15}px`;
+
+        piece.style.animationDuration=
+            `${2.5+Math.random()*3}s`;
+
+        piece.style.animationDelay=
+            `${Math.random()*1.2}s`;
+
+        piece.style.transform=
+            `rotate(${Math.random()*360}deg)`;
+
+        confetti.appendChild(piece);
+
+    }
+
+}
+
+
+/* =========================================================
+   TASTATURĂ
+========================================================= */
+
+document.addEventListener(
+    'keydown',
+    function(event){
+
+        const lock =
+            document.getElementById('lock');
+
+        const secret =
+            document.getElementById('secret');
+
+        const giftView =
+            document.getElementById('giftView');
+
+
+        /*
+            Tastele numerice funcționează pentru
+            codul principal doar cât timp suntem
+            pe ecranul de blocare.
+        */
+
+        if(
+            lock.style.display!=='none' &&
+            lock.offsetParent!==null
+        ){
+
+            if(/^[0-9]$/.test(event.key)){
+
+                press(event.key);
+
+            }
+
+            if(event.key==='Backspace'){
+
+                clearCode();
+
+            }
+
+            if(event.key==='Enter'){
+
+                submitCode();
+
+            }
+
+        }
+
+
+        /*
+            Enter pentru parola secretă
+            funcționează doar pe pagina secretă.
+        */
+
+        if(
+            giftView.style.display!=='none' &&
+            secret.style.display!=='none' &&
+            secret.offsetParent!==null &&
+            event.key==='Enter'
+        ){
+
+            unlockSecret();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
